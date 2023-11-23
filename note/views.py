@@ -11,9 +11,7 @@ class OrderPagination(PageNumberPagination):
     max_page_size = 100
 
 
-class NoteViewSet(
-    ModelViewSet
-):
+class NoteViewSet(ModelViewSet):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
     pagination_class = OrderPagination

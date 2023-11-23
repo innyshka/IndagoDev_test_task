@@ -22,7 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-q^c%*r32&&&h@%u@6xzsne!&g*)s-k+y3i=o%+sy%u0^vj6hzm"
+SECRET_KEY = (
+    "django-insecure-q^c%*r32&&&h@%u@6xzsne!&g*)s-k+y3i=o%+sy%u0^vj6hzm"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -160,26 +162,23 @@ SPECTACULAR_SETTINGS = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=360), #TODO: use normal time
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=360),  # TODO: use normal time
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
-    'BLACKLIST_AFTER_ROTATION': False,
+    "BLACKLIST_AFTER_ROTATION": False,
 }
 
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
 CELERY_TIMEZONE = "Europe/Kyiv"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-
-
 CELERY_BEAT_SCHEDULE = {
-    'generate-random-titles-every-minute': {
-        'task': 'note.tasks.generate_random_titles',
-        'schedule':10.0,
-
+    "generate-random-titles-every-minute": {
+        "task": "note.tasks.generate_random_titles",
+        "schedule": 10.0,
     },
 }
 
@@ -189,6 +188,6 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
+        },
     }
 }

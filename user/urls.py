@@ -17,4 +17,3 @@ urlpatterns = [
     path("me/", ManageUserView.as_view(), name="manage"),
     path("logout/", TokenBlacklistView.as_view(), name="logout"),
 ]
-

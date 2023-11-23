@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "note",
     "user",
     "rest_framework",
+    "rest_framework_simplejwt.token_blacklist",
     "drf_spectacular",
     "debug_toolbar",
 ]
@@ -159,4 +160,5 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=360), #TODO: use normal time
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
+    'BLACKLIST_AFTER_ROTATION': False,
 }

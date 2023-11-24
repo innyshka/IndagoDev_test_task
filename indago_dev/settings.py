@@ -23,14 +23,17 @@ INTERNAL_IPS = [
 
 
 INSTALLED_APPS = [
+    # Django built-in apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Custom apps
     "note",
     "user",
+    # Third-party apps
     "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
     "drf_spectacular",
@@ -161,8 +164,8 @@ SIMPLE_JWT = {
 }
 
 
-CELERY_BROKER_URL = "redis://redis:6379"
-CELERY_RESULT_BACKEND = "redis://redis:6379"
+CELERY_BROKER_URL = os.environ["CELERY_BROKER_URL"]
+CELERY_RESULT_BACKEND = os.environ["CELERY_RESULT_BACKEND"]
 CELERY_TIMEZONE = "Europe/Kyiv"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60

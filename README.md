@@ -1,4 +1,4 @@
-# NOTE API✈️
+# NOTE API📝
 #### Django REST framework
 
 ## ⚙️ Installation

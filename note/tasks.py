@@ -11,4 +11,4 @@ def generate_random_titles():
         random_title = "".join(random.choices(string.ascii_letters, k=10))
         note.title = random_title
         note.save()
-        print(f"Changed title for note ID {note.id} to: {random_title}")
+        # print(f"Changed title for note ID {note.id} to: {random_title}")
